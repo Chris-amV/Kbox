@@ -221,7 +221,7 @@ class space:
                 i.plot3D(ax,b)
         plt.show()
 
-    def sampleC(self,N):
+    def sample(self,N):
         n = self.dim
         result = []
         Area = []
@@ -238,15 +238,10 @@ class space:
             if nbPoints > N/3:
                 nbPoints = int(N/3)
             for i in range(0,nbPoints):
-                bre = 0
                 p = point(n)
                 for j in range(0,n):
-                    if float(boxes.Borders[j][0]+1) >= float(boxes.Borders[j][1])-1:
-                        p.coord[j] = boxes.Borders[j][0] + 0.5
-                    else:
-                        p.coord[j] = random.uniform(boxes.Borders[j][0]+1,boxes.Borders[j][1]-1)
-                if bre == 0:
-                    result.append(p)
+                    p.coord[j] = random.uniform(boxes.Borders[j][0]+1,boxes.Borders[j][1]-1)
+                result.append(p)
         return result
 
 
