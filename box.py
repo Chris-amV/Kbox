@@ -73,10 +73,10 @@ class Box:
             b2 = input("x < ")
             self.Borders.append((int(b1),int(b2)))
     
-    def repeatBorders(self,x,y):
-        for i in range(0,self.dim):
-            self.Borders.append([x,y])
-            self.change.append([-1,-1])
+    def repeatBorders(self,x,y,n = 0):
+        for i in range(n,self.dim):
+            self.Borders[i] = [x,y]
+            self.change[i] = [-1,-1]
 
     def match(self,x):
         for i in range(0,self.dim):
